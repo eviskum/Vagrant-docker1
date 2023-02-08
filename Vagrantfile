@@ -27,9 +27,9 @@ Vagrant.configure("2") do |config|
   config.vm.provision "initnet", type: "ansible", run: "once" do |ansible|
     ansible.playbook = "setnetwork.yml"
   end
-# config.vm.provision "unifi", type: "ansible", run: "never" do |ansible|
-#   ansible.playbook = "unifi-provision.yml"
-# end
+  config.vm.provision "docker", type: "ansible", run: "once" do |ansible|
+    ansible.playbook = "instdocker.yml"
+  end
 # config.vm.provision "updatecerts", type: "ansible", run: "never" do |ansible|
 #   ansible.playbook = "updatecerts.yml"
 #   ansible.tags = "unifi"

@@ -1,0 +1,8 @@
+---
+
+- name: Set up docker
+  hosts: all
+  vars_files:
+    - dockervars.yml
+  roles:
+    - { role: docker, become: yes }
